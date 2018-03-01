@@ -1,0 +1,58 @@
+
+/ * 
+  void fillMatric(unsigned a[][5], unsigned n);
+  Write a function to fill the matrix like picture:
+    
+  0 20 19 17 14
+  1 0  18 16 13
+  2 5  0  15 12
+  3 6  8  0  11
+  4 7  9  10  0
+  
+  */
+  void fillMatric(unsigned a[][5], unsigned n)
+{
+ int rows = 0;
+ int col = 0;
+ int counter = 1;
+ 
+ BYTE diagonal  = n;
+ BYTE top_start_number = (n*n) - diagonal; 
+ BYTE bottom_start_number = 1;
+  BYTE value;
+
+    for(col = 0; col < n; col++)
+    {
+
+      for(rows = col + 1; rows < n; rows++)
+      {
+              a[rows][col] = counter;
+              counter++;
+      }
+    } 
+    counter = 20;
+
+    for(col = 0; col < n; col++)
+    {
+
+      for(rows = 0; rows <= col; rows++)
+      {
+            if(rows == col)
+            { 
+                a[rows][col] = 0;
+            }
+            else
+            {
+              a[rows][col] = counter;
+              counter--;
+            }
+      }
+    }
+
+}
+ 
+  int main()
+  {
+  
+    return 0;
+  }
